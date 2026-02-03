@@ -196,6 +196,8 @@ background: #eee;
   border: 1px solid #e6e6e6;
   overflow: hidden;
   transition: border 0.2s ease, box-shadow 0.2s ease;
+   display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
@@ -279,6 +281,7 @@ background: #eee;
   gap: 6px;
 
   line-height: 1;
+  margin-top: auto; 
 }
 
 
