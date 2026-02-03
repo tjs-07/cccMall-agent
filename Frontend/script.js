@@ -186,61 +186,120 @@ function appendBotMessage(message) {
   chatBody.scrollTop = chatBody.scrollHeight;
 }
 
+// function renderProducts(products) {
+//   const wrapper = document.createElement("div");
+//   wrapper.className = "d-flex gap-2 overflow-auto ms-4";
+
+//   products.slice(0, 5).forEach(p => {
+
+//     //  SAFETY CHECK
+//     if (!p.url) {
+//       console.warn("Product missing URL:", p);
+//       return; // skip this product safely
+//     }
+
+//     const url = p.url.startsWith("http")
+//       ? p.url
+//       : "https://" + p.url;
+
+//     // const html = `
+//     //   <a href="${url}" target="_blank" style="text-decoration:none;">
+//     //     <div class="card" style="min-width:220px; cursor:pointer;">
+//     //       <img src="${p.image}" class="card-img-top">
+//     //       <hr/>
+//     //       <div class="card-body p-2">
+//     //         <h6>${p.name}</h6>
+//     //         <strong class="indira-price">₹${p.price}</strong>
+//     //         <p class="small mt-1">${p.description || ""}</p>
+//     //       </div>
+//     //     </div>
+//     //   </a>
+//     // `;
+
+//     const html = `
+//       <a href="${url}" target="_blank" class="product-link">
+//   <div class="product-card">
+
+//     <div class="product-image">
+//       <img src="${p.image}" alt="${p.name}">
+//     </div>
+
+//     <div class="product-content">
+//       <h6 class="product-title">${p.name}</h6>
+
+//       <p class="product-desc">
+//         ${p.description }
+//       </p>
+
+//       <div class="product-footer">
+//         <span class="product-price">₹${p.price}</span>
+//         <span class="product-cta">View details →</span>
+//       </div>
+//     </div>
+
+//   </div>
+// </a>
+
+
+//     `;
+
+//     wrapper.insertAdjacentHTML("beforeend", html);
+//   });
+
+//   chatBody.appendChild(wrapper);
+//   chatBody.scrollTop = chatBody.scrollHeight;
+// }
+
+
+//-------------render products new-------------
+
 function renderProducts(products) {
   const wrapper = document.createElement("div");
   wrapper.className = "d-flex gap-2 overflow-auto ms-4";
 
   products.slice(0, 5).forEach(p => {
-
-    //  SAFETY CHECK
-    if (!p.url) {
-      console.warn("Product missing URL:", p);
-      return; // skip this product safely
+    // Safety checks
+    if (!p.product_page_url || !p.add_to_cart_url) {
+      console.warn("Product missing URLs:", p);
+      return;
     }
 
-    const url = p.url.startsWith("http")
-      ? p.url
-      : "https://" + p.url;
-
-    // const html = `
-    //   <a href="${url}" target="_blank" style="text-decoration:none;">
-    //     <div class="card" style="min-width:220px; cursor:pointer;">
-    //       <img src="${p.image}" class="card-img-top">
-    //       <hr/>
-    //       <div class="card-body p-2">
-    //         <h6>${p.name}</h6>
-    //         <strong class="indira-price">₹${p.price}</strong>
-    //         <p class="small mt-1">${p.description || ""}</p>
-    //       </div>
-    //     </div>
-    //   </a>
-    // `;
-
     const html = `
-      <a href="${url}" target="_blank" class="product-link">
-  <div class="product-card">
+      <div class="product-card" style="min-width:240px; cursor:pointer;">
 
-    <div class="product-image">
-      <img src="${p.image}" alt="${p.name}">
-    </div>
+        <!-- PRODUCT CLICK AREA -->
+        <div class="product-info"
+             onclick="window.open('${p.product_page_url}', '_blank')">
 
-    <div class="product-content">
-      <h6 class="product-title">${p.name}</h6>
+          <div class="product-image">
+            <img src="${p.image}" alt="${p.name}" style="width:100%; border-radius:8px;">
+          </div>
 
-      <p class="product-desc">
-        ${p.description }
-      </p>
+          <div class="product-content">
+            <h6 class="product-title mt-2">${p.name}</h6>
+            <p class="small text-muted">${p.description || ""}</p>
+            <strong class="indira-price">₹${p.price}</strong>
+          </div>
+        </div>
 
-      <div class="product-footer">
-        <span class="product-price">₹${p.price}</span>
-        <span class="product-cta">View details →</span>
+        <!-- ADD TO CART BUTTON -->
+        <button
+          class="add-to-cart-btn mt-2"
+          onclick="event.stopPropagation(); window.open('${p.add_to_cart_url}', '_blank')"
+          style="
+            width:100%;
+            padding:8px;
+            border-radius:6px;
+            background:#000;
+            color:#fff;
+            border:none;
+            cursor:pointer;
+          "
+        >
+          Add to Cart 🛒
+        </button>
+
       </div>
-    </div>
-
-  </div>
-</a>
-
-
     `;
 
     wrapper.insertAdjacentHTML("beforeend", html);
@@ -249,6 +308,9 @@ function renderProducts(products) {
   chatBody.appendChild(wrapper);
   chatBody.scrollTop = chatBody.scrollHeight;
 }
+
+
+
 
 //options rendering
 
