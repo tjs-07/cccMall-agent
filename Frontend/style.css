@@ -260,12 +260,13 @@ background: #eee;
 
 /* Add to Cart button – minimal & professional */
 /* Add to Cart button – refined & professional */
+/* Add to Cart button – fixed alignment, no card growth */
 .add-to-cart-btn {
   width: 100%;
-  height: 36px;                 /* slimmer = more premium */
-  margin: 10px 0 12px 0;        /* breathing space */
+  height: 36px;
+  margin: 8px 0 0 0;     /* 🔑 no bottom margin */
   border-radius: 8px;
-  background: #7076FF;          /* brand color */
+  background: #7076FF;
   color: #fff;
   font-size: 13px;
   font-weight: 600;
@@ -277,14 +278,15 @@ background: #eee;
   justify-content: center;
   gap: 6px;
 
-  transition: background 0.2s ease, transform 0.1s ease;
+  line-height: 1;
 }
+
 
 /* Hover effect (subtle, professional) */
 .add-to-cart-btn:hover {
-  background: #5f65e6;          /* darker brand shade */
+  background: #5f65e6;
 }
 
 .add-to-cart-btn:active {
-  transform: scale(0.98);       /* press feedback */
+  transform: scale(0.97);
 }
