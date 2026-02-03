@@ -1,0 +1,257 @@
+#bgSite {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  z-index: 1;
+}
+
+
+#chat2 .form-control {
+border-color: transparent;
+}
+
+#chat2 .form-control:focus {
+border-color: transparent;
+box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+/* Chatbot main container */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Chat icon button */
+#chatbot-button {
+     position: relative;  
+    right : 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #7076FF;
+    color: #fffcfc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Chat window */
+#chatbot-window {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 350px;
+}
+
+/* Hide by default */
+.hidden {
+    display: none;
+}
+
+.chat-widget {
+  position: fixed;
+  z-index: 10;   /* IMPORTANT */
+}
+
+
+.bot-loader-bubble {
+  background: #f1f1f1;
+  padding: 8px 14px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.bot-loader-bubble span {
+  width: 6px;
+  height: 6px;
+  background: #666;
+  border-radius: 50%;
+  margin: 0 3px;
+  animation: loaderBlink 1.2s infinite ease-in-out;
+}
+
+.bot-loader-bubble span:nth-child(1) { animation-delay: 0s; }
+.bot-loader-bubble span:nth-child(2) { animation-delay: 0.2s; }
+.bot-loader-bubble span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loaderBlink {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Options container */
+.chat-options {
+  display: flex;
+  flex-direction: column;   /* vertical */
+  gap: 8px;
+  margin: 10px 16px;
+  max-height: 180px;        /* scrollbar height */
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* optional scrollbar styling */
+.chat-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-options::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.chat-option-btn {
+  border: 1px solid #7076FF;
+  background: white;
+  color: #7076FF;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  width: fit-content;     /* 🔑 key line */
+  max-width: 100%;
+  white-space: nowrap;
+  text-align: left;
+  transition: 0.2s;
+}
+
+.chat-option-btn:hover {
+  background: #7076FF;
+  color: white;
+}
+
+
+
+.indira-btn {
+  background-color: #7076FF;
+  border-color: #7076FF;
+  color: #fff;
+}
+
+.indira-btn:hover {
+  background-color: #5f65e6;
+  border-color: #5f65e6;
+  color: #fff;
+}
+
+.indira-user-msg {
+  background-color: #7076FF;
+  color: #fff;
+}
+.indira-price {
+  color: #7076FF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card {
+  min-width: 230px;
+  max-width: 250px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  border-color: #d0d0d0;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.product-image {
+  height: 160px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-content {
+  padding: 14px;
+}
+
+.product-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.product-desc {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.4;
+  min-height: 34px;
+  margin-bottom: 12px;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1b5e20;
+}
+
+.product-cta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4f5dff;
+}
