@@ -283,21 +283,13 @@ function renderProducts(products) {
         </div>
 
         <!-- ADD TO CART BUTTON -->
-        <button
-          class="add-to-cart-btn mt-2"
-          onclick="event.stopPropagation(); window.open('${p.add_to_cart_url}', '_blank')"
-          style="
-            width:100%;
-            padding:8px;
-            border-radius:6px;
-            background:#000;
-            color:#fff;
-            border:none;
-            cursor:pointer;
-          "
-        >
-          Add to Cart 🛒
-        </button>
+       <button
+       class="add-to-cart-btn"
+       onclick="event.stopPropagation(); window.open('${p.add_to_cart_url}', '_blank')"
+      >
+      Add to Cart 
+      </button>
+
 
       </div>
     `;
