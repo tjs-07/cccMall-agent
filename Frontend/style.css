@@ -253,30 +253,38 @@ background: #eee;
 .product-cta {
   font-size: 0.8rem;
   font-weight: 500;
-  color: #4f5dff;
+  color: #7076FF;
 }
 
 
 
 /* Add to Cart button – minimal & professional */
+/* Add to Cart button – refined & professional */
 .add-to-cart-btn {
   width: 100%;
-  height: 40px;              /* fixes alignment */
-  margin-top: 8px;
-  border-radius: 10px;
-  background: #4f5dff;          /* matches your dark theme */
+  height: 36px;                 /* slimmer = more premium */
+  margin: 10px 0 12px 0;        /* breathing space */
+  border-radius: 8px;
+  background: #7076FF;          /* brand color */
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  display: flex;             /* centers text + icon */
+
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
+
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 /* Hover effect (subtle, professional) */
 .add-to-cart-btn:hover {
-  background: #000;
+  background: #5f65e6;          /* darker brand shade */
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);       /* press feedback */
 }
