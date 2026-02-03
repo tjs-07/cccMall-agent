@@ -206,12 +206,12 @@ background: #eee;
 }
 
 .product-image {
-  height: 160px;
+  height: 135px;   /* ⬅️ reduced from 160px */
   background: #fafafa;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 8px;
 }
 
 .product-image img {
@@ -221,7 +221,7 @@ background: #eee;
 }
 
 .product-content {
-  padding: 14px;
+   padding: 10px 12px; 
 }
 
 .product-title {
@@ -257,6 +257,11 @@ background: #eee;
   font-weight: 500;
   color: #7076FF;
 }
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 
